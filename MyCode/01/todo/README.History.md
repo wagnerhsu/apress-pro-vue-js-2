@@ -14,3 +14,5 @@ yarn add vue
 ```powershell
 vue upgrade
 ```
+
+- 使用mitt作为EventBus

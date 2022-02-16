@@ -1,8 +1,9 @@
-import { createApp,h} from 'vue'
-import App from './App.vue'
+import { createApp, h } from "vue";
+import App from "./App.vue";
+import mitt from "mitt";
 
 const app = createApp({
-  render:()=>h(App)
+    render: () => h(App),
 });
-app.mount('#app');
-
+app.config.globalProperties.$emitter = mitt();
+app.mount("#app");
