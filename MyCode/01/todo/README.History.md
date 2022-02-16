@@ -2,6 +2,14 @@
 
 ## 2022-02-16
 
+### 0.1.2
+
+- Add and-design-vue 
+
+```powershell
+yarn add ant-design-vue@next
+```
+
 ### 0.1.1
 
 - Use getCurrentInstance for mitt component
