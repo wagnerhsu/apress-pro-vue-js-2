@@ -2,6 +2,18 @@
 
 ## 2022-02-16
 
+### 0.1.6
+
+- Add vxe-table
+
+```powershell
+yarn add vxe-table@next
+```
+
+### 0.1.5
+
+- Add vuex
+
 ### 0.1.4
 
 - Add vue-router

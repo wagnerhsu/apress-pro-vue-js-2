@@ -8520,6 +8520,11 @@ vuex@^4.0.0-0:
   dependencies:
     "@vue/devtools-api" "^6.0.0-beta.11"
 
+vxe-table@^4.1.21:
+  version "4.1.21"
+  resolved "https://registry.npmmirror.com/vxe-table/-/vxe-table-4.1.21.tgz#247222309c45bec4ac874fda24d0ca7e9d458731"
+  integrity sha512-EtZYDZ0W3LfGygi6MkTeflV3aF1ED6T74VFbmTv2D0X29onsH6CQZEkreQCRG91HDoijrMsIxHmWxUz+QNjA0A==
+
 warning@^4.0.0:
   version "4.0.3"
   resolved "https://registry.npmmirror.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
