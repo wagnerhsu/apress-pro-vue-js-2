@@ -1,0 +1,16 @@
+# History
+
+## 2022-02-16
+
+- 删除dependencies并重新安装
+
+```powershell
+yarn add core-js
+yarn add vue
+```
+
+- 升级插件
+
+```powershell
+vue upgrade
+```
