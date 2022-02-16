@@ -11,7 +11,8 @@
     "ant-design-vue": "^2.2.8",
     "core-js": "^3.21.0",
     "mitt": "^3.0.0",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "xe-utils": "^3.5.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

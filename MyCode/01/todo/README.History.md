@@ -2,9 +2,13 @@
 
 ## 2022-02-16
 
+### 0.1.3
+
+- Add xe-utils
+
 ### 0.1.2
 
-- Add and-design-vue 
+- Add and-design-vue
 
 ```powershell
 yarn add ant-design-vue@next

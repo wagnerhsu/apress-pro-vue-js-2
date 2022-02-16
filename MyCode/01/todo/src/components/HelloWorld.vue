@@ -5,11 +5,15 @@
 </template>
 
 <script>
+import * as xeUtils from "xe-utils";
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
+  setup() {
+    console.log(xeUtils.isArray(null));
+  }
 };
 </script>
 
