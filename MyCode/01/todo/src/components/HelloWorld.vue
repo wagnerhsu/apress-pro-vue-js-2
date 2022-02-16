@@ -1,19 +1,27 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <FirstComponent />
+    <SecondComponent />
   </div>
 </template>
 
 <script>
 import * as xeUtils from "xe-utils";
+import FirstComponent from "./FirstComponent.vue";
+import SecondComponent from "./SecondComponent.vue";
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
+  components: {
+    FirstComponent,
+    SecondComponent,
+  },
   setup() {
     console.log(xeUtils.isArray(null));
-  }
+  },
 };
 </script>
 

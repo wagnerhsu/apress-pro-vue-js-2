@@ -1,6 +1,6 @@
 {
   "name": "todo",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -13,12 +13,14 @@
     "mitt": "^3.0.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0",
     "xe-utils": "^3.5.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
