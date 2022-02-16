@@ -6,12 +6,20 @@
 </template>
 
 <script>
+import { getCurrentInstance } from "vue";
 export default {
-  methods: {
-    emitMyEvent() {
+  setup() {
+    let instance = getCurrentInstance();
+    const emitMyEvent = () => {
       console.log("Emit from SecondComponent");
-      this.$emitter.emit("my-event", { eventContent: "String changed"+Date().toString() });
-    },
+      const emitter = instance.appContext.config.globalProperties.$emitter;
+      emitter.emit("my-event", {
+        eventContent: "String changed" + Date().toString(),
+      });
+    };
+    return {
+      emitMyEvent,
+    };
   },
 };
 </script>

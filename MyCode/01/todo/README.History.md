@@ -2,6 +2,12 @@
 
 ## 2022-02-16
 
+### 0.1.1
+
+- Use getCurrentInstance for mitt component
+
+### 0.1.0
+
 - 删除dependencies并重新安装
 
 ```powershell
