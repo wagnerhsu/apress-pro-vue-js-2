@@ -5,6 +5,7 @@
 ### 0.1.1
 
 - Use getCurrentInstance for mitt component
+- Refactor code to useEmitter
 
 ### 0.1.0
 

@@ -6,14 +6,15 @@
 </template>
 
 <script>
-import { ref, getCurrentInstance, onMounted } from "vue";
+import { ref, onMounted } from "vue";
+import useEmitter from "../composables/useEmitter";
 
 export default {
   setup() {
-    let instance = getCurrentInstance();
+    const emitter = useEmitter();
     const testEvent = ref("");
     onMounted(() => {
-      const emitter = instance.appContext.config.globalProperties.$emitter;
+      
       emitter.on("my-event", (evt) => {
         console.log("Emitter.on");
         testEvent.value = evt.eventContent;

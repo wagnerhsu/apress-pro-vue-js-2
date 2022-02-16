@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import { getCurrentInstance } from "vue";
+import useEmitter from "../composables/useEmitter";
+
 export default {
   setup() {
-    let instance = getCurrentInstance();
+    const emitter = useEmitter();
     const emitMyEvent = () => {
       console.log("Emit from SecondComponent");
-      const emitter = instance.appContext.config.globalProperties.$emitter;
       emitter.emit("my-event", {
         eventContent: "String changed" + Date().toString(),
       });
