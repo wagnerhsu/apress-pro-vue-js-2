@@ -2,6 +2,14 @@
 
 ## 2022-02-16
 
+### 0.1.4
+
+- Add vue-router
+
+```powershell
+vue add router
+```
+
 ### 0.1.3
 
 - Add xe-utils
