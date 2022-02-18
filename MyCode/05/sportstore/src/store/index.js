@@ -1,7 +1,5 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import { createStore } from 'vuex'
 
-Vue.use(Vuex);
 
 const testData = [];
 
@@ -15,7 +13,7 @@ for (let i = 1; i <= 10; i++) {
     })
 }
 
-export default new Vuex.Store({
+export default createStore({
     strict: true,
     state: {
         products: testData,
