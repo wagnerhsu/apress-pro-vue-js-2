@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="container-fluid">
+    <div class="bg-primary text-white m-2 p-3 text-center">
+      <h3 @click="handleEvent">{{ name }}</h3>
+    </div>
+  </div>
+  <MyEvent></MyEvent>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-
+import MyEvent from './components/MyEvent.vue';
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
+  components: { MyEvent },
+  data() {
+    return {
+      name: 'Lifejacket',
+    };
+  },
+  methods: {
+    handleEvent($event) {
+      this.name = $event.type;
+    },
   },
 };
 </script>
