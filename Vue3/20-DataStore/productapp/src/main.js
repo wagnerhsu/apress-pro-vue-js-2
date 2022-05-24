@@ -11,5 +11,5 @@ const emitter = mitt();
 const app = createApp(App);
 app.provide('eventBus', emitter);
 app.provide('restDataSource', new RestDataSource(emitter));
-app.use(store).use(store).mount('#app');
+app.use(store).mount('#app');
 import 'bootstrap/dist/js/bootstrap';
