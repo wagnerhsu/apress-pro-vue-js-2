@@ -3,15 +3,21 @@ import HelloWorld from "./components/HelloWorld.vue";
 import TheWelcome from "./components/TheWelcome.vue";
 import ChildComponent from "./components/Child.vue";
 import { ref } from "vue";
-const message = ref('This is the parent component');
-const labelText = ref('name');
+const message = ref("This is the parent component");
+const labelText = ref("name");
 </script>
 
 <template>
   <div class="bg-secondary text-white text-center m-2 p-2 h5">
-    {{message}}
-    <ChildComponent :labelText="labelText" initialValue="Kayak"></ChildComponent>
-    <!-- <child-component></child-component> -->
+    {{ message }}
+    <ChildComponent
+      :labelText="labelText"
+      initialValue="Kayak"
+    ></ChildComponent>
+    <child-component
+      :label-text="labelText"
+      initial-value="Kayak"
+    ></child-component>
   </div>
   <header>
     <img
@@ -27,9 +33,7 @@ const labelText = ref('name');
     </div>
   </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+  <main></main>
 </template>
 
 <style scoped>
