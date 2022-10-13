@@ -2,6 +2,10 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import TheWelcome from "./components/TheWelcome.vue";
 import BindDemo from "./components/BindDemo.vue";
+import TwoWayBind from "./components/TwoWayBind.vue";
+import BindWithVModel from "./components/BindWithVModel.vue";
+import BindArray from "./components/BindArray.vue";
+import BindSelect from "./components/BindSelect.vue";
 </script>
 
 <template>
@@ -23,6 +27,10 @@ import BindDemo from "./components/BindDemo.vue";
         <TheWelcome />
     </main>
     <BindDemo />
+    <TwoWayBind />
+    <BindWithVModel />
+    <BindArray />
+    <BindSelect />
 </template>
 
 <style scoped>
