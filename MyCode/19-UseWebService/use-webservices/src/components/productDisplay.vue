@@ -21,6 +21,12 @@
                         >
                             Edit
                         </button>
+                        <button
+                            class="btn btn-sm btn-danger"
+                            v-on:click="deleteProduct(p)"
+                        >
+                            Delete
+                        </button>
                     </td>
                 </tr>
                 <tr v-if="products?.length == 0">
@@ -36,18 +42,26 @@
     </div>
 </template>
 <script setup lang="ts">
-import axios from "axios";
+import { RestDataSource } from "@/composables/RestDataSource";
 import { useMitt } from "@/composables/useMitt";
 import type { Product } from "@/models/Product";
 import { ref, onMounted } from "vue";
 const baseUrl = "http://localhost:3500/products/";
 const products = ref<Product[]>();
 const mitt = useMitt();
+const restDataSource = new RestDataSource();
 const createNew = () => {
     mitt.emit("create");
 };
 const editProduct = (product: Product) => {
     mitt.emit("edit", product);
+};
+const deleteProduct = async (product: Product) => {
+    await restDataSource.deleteProduct(product);
+    if (products.value) {
+        let index = products.value?.findIndex((p) => p.id == product.id);
+        products.value?.splice(index, 1);
+    }
 };
 const processProducts = (newProducts: Product[]) => {
     if (products.value) {
@@ -57,11 +71,18 @@ const processProducts = (newProducts: Product[]) => {
         products.value = newProducts;
     }
 };
-onMounted(() => {
-    axios.get(baseUrl).then((resp) => {
-        console.log(`HTTP Response: ${resp.status}, ${resp.statusText}`);
-        console.log(`Response Data: ${resp.data.length} items`);
-        processProducts(resp.data);
-    });
+const processComplete = async (product: Product) => {
+    let index = products.value?.findIndex((p) => p.id == product.id);
+    if (index == -1) {
+        await restDataSource.saveProduct(product);
+        products.value?.push(product);
+    } else {
+        await restDataSource.updateProduct(product);
+    }
+};
+onMounted(async () => {
+    let data = await restDataSource.getProducts();
+    processProducts(data);
+    mitt.on("complete", () => console.log("complete"));
 });
 </script>
