@@ -29,8 +29,10 @@
 
 <script setup lang="ts">
 import type { Product } from "../models/Product";
-import { ref } from "vue";
+import { useMitt } from "../composables/useMitt";
+import { ref, onMounted } from "vue";
 const editing = ref(false);
+const mitt = useMitt();
 const product = ref<Product>({
     id: 2,
     name: "Lifejacket",
@@ -49,23 +51,27 @@ const startEdit = (product: Product) => {
 const startCreate = () => {
     editing.value = false;
     product.value = {
-        id: 2,
-        name: "Lifejacket",
-        category: "Watersports",
-        price: 48.95,
+        id: 0,
+        name: "",
+        category: "",
+        price: 0.0,
     };
 };
 const save = () => {
-    //eventBus.$emit("complete", this.product);
+    mitt.emit("complete", product);
     startCreate();
 };
 const cancel = () => {
     product.value = {
-        id: 2,
-        name: "Lifejacket",
-        category: "Watersports",
-        price: 48.95,
+        id: 0,
+        name: "",
+        category: "",
+        price: 0.0,
     };
     editing.value = false;
 };
+onMounted(() => {
+    mitt.on("create", startCreate);
+    mitt.on("edit", (p: any) => startEdit(p));
+});
 </script>
