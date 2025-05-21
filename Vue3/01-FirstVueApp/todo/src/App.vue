@@ -50,46 +50,40 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref, computed, onMounted } from 'vue';
 
-    export default {
-        name: 'app',
-        data() {
-            return {
-                name: "Adam",
-                tasks: [],
-                hideCompleted: true,
-                newItemText: ""
-            }
-        },
-        computed: {
-            filteredTasks() {
-                return this.hideCompleted ?
-                    this.tasks.filter(t => !t.done) : this.tasks
-            }
-        },
-        methods: {
-            addNewTodo() {
-                this.tasks.push({
-                    action: this.newItemText,
-                    done: false
-                });
-                this.storeData();
-                this.newItemText = "";
-            },
-            storeData() {
-                localStorage.setItem("todos", JSON.stringify(this.tasks));
-            },
-            deleteCompleted() {
-                this.tasks = this.tasks.filter(t => !t.done);
-                this.storeData();
-            }
-        },
-        created() {
-            let data = localStorage.getItem("todos");
-            if (data != null) {
-                this.tasks = JSON.parse(data);
-            }
-        }
-    }
+const name = ref('Adam');
+const tasks = ref([]);
+const hideCompleted = ref(true);
+const newItemText = ref("");
+
+const filteredTasks = computed(() =>
+  hideCompleted.value ? tasks.value.filter(t => !t.done) : tasks.value
+);
+
+function storeData() {
+  localStorage.setItem("todos", JSON.stringify(tasks.value));
+}
+
+function addNewTodo() {
+  tasks.value.push({
+    action: newItemText.value,
+    done: false
+  });
+  storeData();
+  newItemText.value = "";
+}
+
+function deleteCompleted() {
+  tasks.value = tasks.value.filter(t => !t.done);
+  storeData();
+}
+
+onMounted(() => {
+  let data = localStorage.getItem("todos");
+  if (data != null) {
+    tasks.value = JSON.parse(data);
+  }
+});
 </script>
