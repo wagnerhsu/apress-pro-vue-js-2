@@ -3,19 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "preview": "vite preview",
+    "serve": "vite",
+    "build": "vite build",
+    "dev": "vite"
   },
   "dependencies": {
+    "vuex": "^4.1.0",
     "bootstrap": "^4.0.0",
-    "vue": "^2.5.16"
+    "@vue/compat": "^3.5.33",
+    "vue": "^3.5.33"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-rc.3",
-    "@vue/cli-plugin-eslint": "^3.0.0-rc.3",
-    "@vue/cli-service": "^3.0.0-rc.3",
-    "vue-template-compiler": "^2.5.16"
+    "vite": "^8.0.10",
+    "@vue/compiler-sfc": "^3.5.33",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "autoprefixer": "^10.4.21"
   },
   "eslintConfig": {
     "root": true,

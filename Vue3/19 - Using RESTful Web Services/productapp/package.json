@@ -3,28 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "preview": "vite preview",
     "json": "json-server restData.js -p 3500",
-    "start": "concurrently \"npm run json\" \"npm run serve\""
+    "serve": "vite",
+    "build": "vite build",
+    "start": "concurrently \"npm run json\" \"npm run serve\"",
+    "dev": "vite"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "bootstrap": "^4.0.0",
-    "cache-loader": "^4.1.0",
     "concurrently": "^7.4.0",
-    "jquery": "1.9.1",
+    "webpack": "4.0.0",
     "json-server": "^0.12.1",
+    "vuex": "^4.1.0",
     "popper.js": "1.16.1",
-    "vue": "^2.5.16",
-    "webpack": "4.0.0"
+    "vue": "^3.5.33",
+    "axios": "^0.18.0",
+    "cache-loader": "^4.1.0",
+    "jquery": "1.9.1",
+    "@vue/compat": "^3.5.33",
+    "bootstrap": "^4.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-rc.3",
-    "@vue/cli-plugin-eslint": "^3.0.0-rc.3",
-    "@vue/cli-service": "^3.0.0-rc.3",
-    "vue-template-compiler": "^2.5.16"
+    "vite": "^8.0.10",
+    "@vue/compiler-sfc": "^3.5.33",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "autoprefixer": "^10.4.21"
   },
   "eslintConfig": {
     "root": true,

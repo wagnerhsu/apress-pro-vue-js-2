@@ -3,42 +3,45 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "preview": "vite preview",
+    "serve": "vite",
+    "build": "vite build",
+    "dev": "vite"
   },
   "dependencies": {
-    "vue": "^2.5.16"
+    "vuex": "^4.1.0",
+    "@vue/compat": "^3.5.33",
+    "vue": "^3.5.33"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-beta.16",
-    "@vue/cli-plugin-eslint": "^3.0.0-beta.16",
-    "@vue/cli-service": "^3.0.0-beta.16",
-    "vue-template-compiler": "^2.5.16"
+    "vite": "^8.0.10",
+    "@vue/compiler-sfc": "^3.5.33",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "autoprefixer": "^10.4.21"
   },
-"eslintConfig": {
-  "root": true,
-  "env": {
-    "node": true
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": "off",
+      "no-declare": "off",
+      "no-unused-vars": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
   },
-  "extends": [
-    "plugin:vue/essential",
-    "eslint:recommended"    
-  ],
-  "rules": {
-    "no-console": "off",
-    "no-declare": "off",
-    "no-unused-vars": "off"    
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
   },
-  "parserOptions": {
-    "parser": "babel-eslint"
-  }
-},
-"postcss": {
-  "plugins": {
-    "autoprefixer": {}
-  }
-},
   "browserslist": [
     "> 1%",
     "last 2 versions",
